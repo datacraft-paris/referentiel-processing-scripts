@@ -1,0 +1,281 @@
+Assessment version : [202609]
+Scoring version : [1]
+
+Pre-filled score values are fetched from assessment-202301_scoring-1.json
+(only for answer items set to 1 in assessment-202609_upgrade_table.json vs. version 202301)
+(answer items not set to 1 are pre-filled with '....' so you can identify them quickly)
+
+# section 1 - Protéger les données à caractère personnel ou confidentielles et se conformer aux exigences réglementaires
+
+## Q1.1 - Législation et exigences contractuelles applicables - Identification
+0.00 [1.1.a] Pas encore identifiées
+0.25 [1.1.b] Partiellement identifiées ou en cours d'identification
+0.50 [1.1.c] Identifiées
+0.75 [1.1.d] Identifiées et maîtrisées par les collaborateurs
+1.00 [1.1.e] Identifiées, documentées et maîtrisées par les collaborateurs
+
+## Q1.2 - Législation et exigences contractuelles applicables - Approche de mise en conformité
+0.00 [1.2.a] Informelle, basée sur la responsabilité et la compétence de chacun
+0.33 [1.2.b] Formalisée et accessible à tous les collaborateurs
+0.67 [1.2.c] Formalisée et maîtrisée par les collaborateurs
+1.00 [1.2.d] Formalisée et maîtrisée par les collaborateurs, documentée pour chaque traitement de données personnelles ou confidentielles, et chaque système d'IA le requérant
+
+## Q1.3 - Veille réglementaire
+0.00 [1.3.a] Nous ne faisons pas vraiment de veille réglementaire
+0.25 [1.3.b] Nous faisons une veille informelle, chaque collaborateur remonte les informations sur un moyen de communication dédiée
+0.50 [1.3.c] Nous avons une veille formalisée, les responsables sont identifiés, le processus est documenté
+
+## Q1.4 - Législation et exigences contractuelles applicables - Audit et certification
+1.50 [1.4.a] Oui
+0.00 [1.4.b] Non
+0.50 [1.4.c] Pas encore, nous préparons actuellement l'audit ou la certification de la conformité de notre organisation aux exigences relatives aux données personnelles et confidentielles
+1.00 [1.4.d] Pas au niveau de l'organisation, mais c'est en revanche le cas pour un projet au moins
+
+## Q1.5 - Principe de minimisation
+-nc- [1.5.a] Nous faisons en sorte de n'utiliser aucune données personnelles ou confidentielles
+2.00 [1.5.b] Nous avons besoin d'en utiliser dans certains projets et le principe de minimisation est alors systématiquement appliqué
+1.00 [1.5.c] Le principe de minimisation est connu des collaborateurs, qui l'appliquent en général
+0.00 [1.5.d] Le réflexe "qui peut le plus peut le moins" vis-à-vis des données existe encore ici et là au sein de notre organisation. Dans certains projets, nous conservons des jeux de données beaucoup plus riches en données personnelles et confidentielles que ce qui est strictement utile au projet
+0.50 [1.5.e] Le principe de minimisation est connu des collaborateurs, mais son application n'est pas la norme. En revanche, nous apportons une attention particulière à mettre en oeuvre des mesures de limitation des risques pour les données à caractère personnel (par exemple : pseudonymiser certaines features par des identifiants avec une table de correspondance séparée, éclater les données en plusieurs bases ou tables réparties)
+
+## Q1.6 - Projet impliquant un nouveau traitement de données personnelles ou confidentielles
+0.34 [1.6.a] Nous élaborons une analyse d'impact relative à la protection des données (AIPD ; en anglais *Privacy Impact Assessment*)
+0.33 [1.6.b] Nous mettons en oeuvre des mesures de protections (concernant notamment le transfert, le stockage, et l'accès aux données concernées)
+0.33 [1.6.c] Nous contractualisons les relations avec les fournisseurs et les clients et les responsabilités qui en découlent
+0.00 [1.6.d] Nous n'avons pas encore mis en place d'approche organisée sur ces sujets
+
+## Q1.7 - Sécurité de l'apprentissage automatique - Niveau de connaissance
+-nc- [1.7.a] Nous n'utilisons pas de modèle d'IA appris sur des données personnelles ou confidentielles
+0.00 [1.7.b] Complètement débutant
+0.33 [1.7.c] Basique
+1.00 [1.7.d] Confirmé
+1.50 [1.7.e] Expert
+
+## Q1.8 - Sécurité de l'apprentissage automatique - Mise en oeuvre
+0.50 [1.8.a] Nous faisons une veille technique sur les principales attaques et mesures pour s'en prémunir
+0.50 [1.8.b] Les collaborateurs reçoivent régulièrement des informations et formations qui leur permettent de développer leurs compétences dans ce domaine
+1.00 [1.8.c] Dans certains projets, nous mettons en oeuvre des techniques spécifiques permettant de réduire les risques liés aux modèles que nous élaborons (par exemple : confidentialité différentielle, distillation...)
+0.50 [1.8.d] Sur chaque projet, les vulnérabilités qui s'y appliquent et les techniques mises en oeuvre sont documentées (par exemple dans la documentation du cycle de vie de chaque modèle, voir Section 4 et élément 4.1 pour plus d'information sur ce concept)
+0.00 [1.8.e] Nous n'avons pas encore mis en place d'approche organisée sur ces sujets
+
+## Q1.9 - Notifications d’incidents de sécurité aux autorités de régulation
+0.00 [1.9.a] Nous n'avons pas encore mis en place de procédure pour couvrir ce cas de figure
+0.33 [1.9.b] Nous avons une procédure décrivant la marche à suivre
+0.66 [1.9.c] Nous avons une procédure décrivant la marche à suivre, et celle-ci référence les autorités auxquelles nous devons faire un signalement
+1.00 [1.9.d] Nous avons une procédure décrivant la marche à suivre, qui référence les autorités auxquelles nous devons faire un signalement, et qui inclut une communication aux parties prenantes dont nous disposons des coordonnées
+
+
+# section 2 - Prévenir les biais, élaborer des modèles non discriminatoires
+
+## Q2.1 - Collecte et assemblage de données en jeux de données d'entraînement et de validation
+-nc- [2.1.a] Nous ne procédons pas nous-mêmes à la collecte et à l'assemblage de données brutes en jeux de données d'entraînement et de validation
+0.00 [2.1.b] Nous fonctionnons de manière informelle à ce sujet et nous en remettons à la pratique de chaque collaborateur impliqué
+0.50 [2.1.c] Notre approche inclut une ou des méthodes pour se prémunir contre les risques de poisoning attack lorsque des collectes de données sont mises en oeuvre
+0.50 [2.1.d] Notre approche inclut une ou des méthodes pour vérifier, et faire en sorte lorsque cela est nécessaire, que les jeux de données contiennent des samples d'événements rares
+0.50 [2.1.e] Notre approche inclut une ou des méthodes pour compléter des valeurs manquantes dans les jeux de données
+0.50 [2.1.f] Notre approche inclut une ou des méthodes pour traiter les points de données erronés ou atypiques
+
+## Q2.2 - Analyse des données d'entraînement utilisées
+-nc- [2.2.a] Ne collecte ni n'assemble elle-même de jeux de données d'entraînement
+0.00 [2.2.b] Fonctionne de manière informelle à ce sujet et s'en remet à la pratique de chaque collaborateur impliqué
+0.75 [2.2.c] Ne dispose pas d'une approche documentée sur le sujet, mais les collaborateurs impliqués sont formés aux risques et bonnes pratiques sur le sujet
+1.50 [2.2.d] Dispose d'une approche documentée et systématiquement mise en oeuvre
+
+## Q2.3 - Évaluation des risques de biais ou discrimination à l'encontre de certains groupes sociaux
+0.00 [2.3.a] Fonctionne de manière informelle pour évaluer s'il y a ou non un risque de discrimination et s'en remet à la pratique de chaque collaborateur impliqué
+0.50 [2.3.b] Ne dispose pas d'une approche documentée sur le sujet, mais les collaborateurs impliqués sont compétents et formés sur le sujet
+1.00 [2.3.c] Dispose d'une approche documentée et systématiquement mise en oeuvre pour évaluer ce risque
+
+## Q2.4 - Prévention des biais et des discriminations
+-nc- [2.4.a] Nous ne traitons pas de thématique ou ne portons pas de projet correspondant à des cas de figure avec des risques de biais populationnel et de discrimination à l'encontre de certains groupes sociaux (genre, origine, âge, etc.)
+0.50 [2.4.b] Nous portons une attention particulière à l'identification d'attributs protégés et à leurs proxys éventuels (par exemple étude une à une des variables utilisées en entrées du modèle pour recenser les corrélations qu'elles pourraient avoir avec des données sensibles)
+1.00 [2.4.c] Nous procédons à des évaluations sur des données de test comprenant différentes sous-populations afin d'identifier les éventuels biais problématiques
+1.00 [2.4.d] Nous sélectionnons et mettons en oeuvre une ou plusieurs mesure(s) de justice et d'équité (_fairness metric_)
+0.50 [2.4.e] Nous mettons en oeuvre des approches de type _data augmentation_ ou _re-weighting_ pour réduire les éventuels biais des jeux de données
+0.50 [2.4.f] Les pratiques ci-dessus que nous mettons en oeuvre sont dûment documentées et intégrées dans la documentation du cycle de vie des modèles concernés
+0.00 [2.4.g] Nous n'avons pas encore mis en place de mesures de ce type
+
+## Q2.5 - Liens entre les choix de modélisation et les biais
+-nc- [2.5.a] Nous ne traitons pas de thématique ou ne portons pas de projet correspondant à des cas de figure avec des risques de discrimination à l'encontre de certains groupes sociaux (genre, origine, âge, etc.) 
+0.00 [2.5.b] Complètement débutant
+0.50 [2.5.c] Basique
+1.00 [2.5.d] Confirmé
+1.50 [2.5.e] Expert
+
+
+# section 3 - Évaluer la performance de manière rigoureuse
+
+## Q3.1 - Séparation des jeux de données de test
+0.00 [3.1.a] Fonctionne de manière informelle à ce sujet et s'appuie sur la compétence et la responsabilité des collaborateurs impliqués
+0.50 [3.1.b] Dispose d'une approche documentée et systématiquement mise en oeuvre d'isolation des jeux de données de test
+1.00 [3.1.c] Utilise un outil de versionnage et de traçabilité des jeux de données d'entraînement et de test utilisés, permettant ainsi de vérifier ou auditer ultérieurement la non-contamination des données de tests
+0.50 [3.1.d] Les modalités de constitution des jeux de test (ex : train-test split) choisies sont évaluées, documentées et intégrées à la documentation du cycle de vie des modèles concernés
+
+## Q3.2 - Projets d'apprentissage distribué préservant la confidentialité
+-nc- [3.2.a] Nous ne participons pas à des projets d'apprentissage distribué *privacy-preserving*
+1.50 [3.2.b] Nous maîtrisons et mettons en oeuvre des approches permettant d'élaborer des jeux de données de test de manière à ce qu'il n'y ait pas de contamination croisée entre données d'entraînement et de test provenant des différents partenaires
+0.00 [3.2.c] À ce stade nous ne maîtrisons pas les méthodes permettant d'élaborer des jeux de données de test de manière à ce qu'il n'y ait pas de contamination croisée entre données d'entraînement et de test provenant des différents partenaires
+
+## Q3.3 - Analyse des données de validation et de test
+0.00 [3.3.a] Fonctionne de manière informelle à ce sujet, et s'en remet à la pratique de chaque collaborateur impliqué
+0.50 [3.3.b] Ne dispose pas d'une approche documentée sur le sujet, mais les collaborateurs impliqués sont formés aux risques et bonnes pratiques sur le sujet
+1.00 [3.3.c] Dispose d'une approche documentée et systématiquement mise en oeuvre
+
+## Q3.4 - Validation des performances
+0.50 [3.4.a] Lors de l'élaboration d'un modèle, nous choisissons la ou les métrique(s) de performance en amont de l'apprentissage automatique, parmi les métriques les plus standards possibles
+1.00 [3.4.b] La mise en oeuvre de mesures ou tests de robustesse (*robustness metrics*) est considérée et évaluée pour chaque projet d'élaboration d'un modèle, et appliquée par défaut dans les cas de figure où les données d'entrées peuvent être soumises à des perturbations fines (e.g. images, sons)
+0.50 [3.4.c] Les pratiques ci-dessus que nous mettons en oeuvre sont documentées et intégrées à la documentation du cycle de vie des modèles concernés, y compris les métriques de performance choisies
+0.00 [3.4.d] Nous n'avons pas encore mis en place de mesure de ce type
+
+## Q3.5 - Suivi de la performance dans le temps
+-nc- [3.5.a] Les modèles que nous élaborons ne sont pas utilisés dans des systèmes en production
+0.50 [3.5.b] La performance est systématiquement ré-évaluée lorsque le modèle est mis à jour
+0.50 [3.5.c] La performance est systématiquement ré-évaluée lorsque le contexte d'utilisation du modèle évolue, ce qui peut créer un risque sur la performance du modèle du fait de l'évolution de l'espace des données d'entrée
+0.50 [3.5.d] La distribution des données d'entrée est monitorée, et la performance est ré-évaluée régulièrement sur des données de test actualisées
+0.50 [3.5.e] Des contrôles aléatoires sont réalisés sur les sorties de nos modèles (ex : prédictions) afin d'en contrôler la cohérence
+0.00 [3.5.f] Nous ne mettons pas systématiquement en place de mesure de ce type
+
+## Q3.6 - Seuils de décision et plages d'indécision
+0.00 [3.6.a] Fonctionne de manière informelle à ce sujet, selon les collaborateurs impliqués
+0.50 [3.6.b] Dispose d'une approche documentée et systématiquement mise en oeuvre
+0.67 [3.6.c] Prend en compte la possibilité de maintenir des plages d'indécision dans certains cas de figure
+0.33 [3.6.d] Les choix réalisés pour chaque modèle et mis en oeuvre sont documentés et intégrés à la documentation du cycle de vie des modèles concernés
+
+## Q3.7 - Audits par des tierces parties indépendantes et *verifiable claims*
+-nc- [3.7.a] Nous ne communiquons pas ou n'avons pas besoin de communiquer sur les résultats ou la performance de nos systèmes d'IA, et n'utilisons pas les résultats ou la performance de nos systèmes d'IA comme argument vis-à-vis de nos parties prenantes, nous ne sommes pas concernés par cet élément d'évaluation
+0.00 [3.7.b] Nous communiquons sur les résultats ou la performance de nos systèmes d'IA et nous appuyons sur ceux-ci pour notre développement sans faire auditer auparavant nos travaux par une tierce partie indépendante, sans mettre à disposition d'éléments de preuve
+2.00 [3.7.c] Nous faisons auditer nos travaux par une tierce partie indépendante, ou nous mettons à disposition des éléments de preuve, avant de communiquer sur nos résultats et de nous en prévaloir vis-à-vis de nos parties prenantes
+
+
+# section 4 - Assurer la reproductibilité des modèles et en établir la chaîne de responsabilité
+
+## Q4.1 - Cycle de vie des modèles
+0.00 [4.1.a] À ce stade nous n'avons pas mis en oeuvre d'approche de ce type
+1.00 [4.1.b] Ces informations existent et sont enregistrées afin de ne pas être perdues, mais elles peuvent l'être de manière désordonnée et ne sont pas versionnées
+2.00 [4.1.c] Elles sont rassemblées en une documentation qui accompagne systématiquement le modèle
+2.50 [4.1.d] Elles sont rassemblées en une documentation qui accompagne systématiquement le modèle et versionnées
+2.75 [4.1.e] Elles sont rassemblées en une documentation qui accompagne systématiquement le modèle et versionnées, accessibles à toutes les parties prenantes concernées
+
+## Q4.2 - Conditions et limites d'utilisation d'un modèle
+0.00 [4.2.a] Ne sont pas documentées systématiquement, cela dépend de la pratique de chaque collaborateur impliqué
+1.00 [4.2.b] Sont explicitées et documentées systématiquement
+0.50 [4.2.c] Sont versionnées
+1.00 [4.2.d] Contiennent une description des risques que présenterait une utilisation en dehors des "conditions et limites de validité"
+0.50 [4.2.e] Les documents présentant ces "conditions et limites de validité" accompagnent systématiquement les modèles tout au long de leur cycle de vie
+
+## Q4.3 - Analyse et partage d'incidents
+0.00 [4.3.a] À ce stade nous ne faisons pas d'analyse des incidents ou comportements inattendus observés
+0.50 [4.3.b] Nous analysons les incidents ou comportements inattendus rencontrés, mais ne les publions pas
+1.00 [4.3.c] Nous analysons les incidents ou comportements inattendus rencontrés et les publions lorsque cela est pertinent (e.g. article, blog)
+
+## Q4.4 - Chaîne de valeur et de responsabilités
+-nc- [4.4.a] Au sein de notre organisation les projets de data science sont menés de bout en bout par des équipes autonomes, y compris l'élaboration de jeux de données et l'exploitation pour son propre compte des modèles. En conséquence, pour chaque projet une équipe autonome est seule responsable
+1.50 [4.4.b] Nous procédons systématiquement à l'identification des risques et responsabilités de chacune des parties prenantes internes ou externes avec lesquelles nous collaborons
+1.00 [4.4.c] Nous contractualisons systématiquement avec les acteurs amont (e.g. fournisseurs de données) et aval (e.g. clients, partenaires utilisateurs de modèles)
+0.00 [4.4.d] Nous ne mettons pas systématiquement en place de mesure de ce type
+
+## Q4.5 - Sous-traitance de tout ou partie des activités data science
+-nc- [4.5.a] Non concerné, nous ne sous-traitons pas ces activités
+1.50 [4.5.b] Oui, nos réponses à cette évaluation tiennent compte des pratiques de nos sous-traitants
+0.00 [4.5.c] Non, nos réponses à cette évaluation ne s'appliquent pas à nos sous-traitants et sur certains points il est possible qu'ils soient moins avancés que nous
+
+## Q4.6 - Utilisation de modèles ou systèmes d'IA externes
+-nc- [4.6.a] N'utilise pas de modèles ou composants d'IA externes
+0.00 [4.6.b] Fonctionne de manière informelle à ce sujet, sans étude préalable systématique
+1.00 [4.6.c] Mène une étude de ce que le fournisseur communique sur les vulnérabilités, biais et limites connues du modèle ou composant, et la prend en compte lors du choix de son intégration
+1.00 [4.6.d] Maintient une veille sur les évolutions du modèle ou composant décidées par le fournisseur (mise à jour, dépréciation, changement de version), afin d'anticiper leur impact sur les usages
+1.00 [4.6.e] Met en oeuvre des pratiques permettant d'en limiter les conséquences sur les systèmes concernés lorsqu'une vulnérabilité ou un changement significatif est identifié côté fournisseur
+0.50 [4.6.f] Documente ces pratiques et les intègre à la documentation du cycle de vie du projet, au même titre que pour les modèles élaborés en interne
+
+
+# section 5 - Utiliser des modèles en confiance et de manière responsable
+
+## Q5.1 - Utilisation de modèles d'IA pour son propre compte
+-nc- [5.1.a] Notre organisation n'utilise pas de modèles d'IA pour son propre compte
+1.00 [5.1.b] **Un registre des modèles d'IA** identifie tous les modèles utilisés par l'organisation, nous le maintenons à jour
+0.50 [5.1.c] Pour chaque modèle, nous disposons d'un **responsable point de contact** défini, identifiable et contactable simplement
+1.00 [5.1.d] Pour chaque modèle, nous réalisons systématiquement une **évaluation des risques** consécutifs à d'éventuels incidents, défaillances et biais
+1.00 [5.1.e] Des outils de monitoring sont mis en place afin d'assurer une surveillance continue des systèmes basés sur des modèles d'IA et peuvent déclencher des alertes directement auprès de l'équipe responsable
+1.00 [5.1.f] Pour chaque modèle, nous définissons et testons une procédure de suspension du modèle et un mode de fonctionnement dégradé sans le modèle, pour parer au cas de figure où le modèle serait sujet à une défaillance ou un comportement anormal
+0.50 [5.1.g] Pour chaque modèle, nous étudions son cycle de vie (toutes les étapes et tous les choix qui ont conduit à son élaboration et son évaluation), ainsi que ses conditions et limites d'utilisation, pour comprendre le modèle avant de l'utiliser
+0.50 [5.1.h] Nous utilisons toujours les modèles pour des **usages en adéquation avec leurs conditions et limites d'utilisation**
+0.00 [5.1.i] Nous n'avons pas encore mis en place de mesure de ce type
+
+## Q5.2 - Développement de modèles d'IA pour le compte de tiers
+-nc- [5.2.a] Notre organisation ne fournit pas à ses clients ou à des tiers, et n'opère pas pour le compte de tiers d'application basée sur des modèles d'IA
+1.00 [5.2.b] **Un registre des modèles d'IA** identifie tous les modèles ou applications utilisés par ses clients et/ou par l'organisation pour le compte de tiers, nous le maintenons à jour
+0.50 [5.2.c] Pour chaque modèle ou application pour un client ou un tiers, nous disposons d'un **responsable point de contact** défini, identifiable et joignable simplement
+1.00 [5.2.d] Pour chaque modèle ou application pour un client ou un tiers, nous réalisons systématiquement une **évaluation des risques** consécutifs à d'éventuels incidents, défaillances et biais
+1.00 [5.2.e] Des outils de monitoring sont mis en place afin d'assurer une surveillance continue des systèmes de ML et peuvent déclencher des alertes directement auprès de l'équipe responsable
+1.00 [5.2.f] Pour chaque modèle ou application pour un client ou un tiers, nous définissons et testons une procédure de suspension du modèle et un mode de fonctionnement dégradé sans le modèle, pour parer au cas de figure où le modèle serait sujet à une défaillance ou un comportement anormal
+0.50 [5.2.g] Pour chaque modèle ou application pour un client ou un tiers, nous étudions son cycle de vie de bout en bout et ses conditions et limites d'utilisation pour comprendre le modèle avant de l'utiliser
+0.50 [5.2.h] Nous fournissons à nos clients ou opérons pour leur compte des modèles ou applications pour des **usages en adéquation avec leurs conditions et limites d'utilisation**
+0.00 [5.2.i] Nous n'avons pas encore mis en place de mesure de ce type
+
+## Q5.3 - Gestion des prédictions problématiques, processus de contournement, intervention humaine
+-nc- [5.3.a] Notre organisation n'utilise pas de modèles d'IA pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA
+0.00 [5.3.b] Nous implémentons des modèles d'IA dans des systèmes automatiques intégrés, sans mécanismes permettant de pallier à ou d'éviter des résultats non souhaitables dûs aux prédictions des modèles
+0.50 [5.3.c] Nous intégrons, dans les systèmes automatiques s'appuyant sur des modèles d'IA, les fonctionnalités permettant de gérer ces cas de résultats non souhaitables. Pour ces cas de figure, nous mettons en place des mécanismes permettant à un opérateur humain d'aller contre une décision automatique pour gérer de tels résultats non souhaitables ou incidents
+1.00 [5.3.d] En complément des mécanismes de gestion d'incident, dans les systèmes automatiques s'appuyant sur des modèles d'IA, lorsque l'indicateur de fiabilité pour la décision automatique n'est pas satisfaisant un opérateur humain est sollicité
+2.00 [5.3.e] Nous réalisons systématiquement une analyse de risque et appliquons, lorsque nécessaire, le principe d'intervention humaine. Les sorties des modèles d'IA que nous mettons en oeuvre sont utilisées par des opérateurs humains, et ne servent pas de déterminants à des décisions automatiques
+
+## Q5.4 - Explicabilité et interprétabilité
+0.00 [5.4.a] Notre organisation n'est pour l'instant pas familière avec les méthodes et outils d'explicabilité et d'interprétabilité des modèles
+0.25 [5.4.b] Nous nous intéressons au sujet de l'explicabilité et l'interprétabilité des modèles et dialoguons avec nos parties prenantes sur ce sujet
+0.25 [5.4.c] Nous faisons en sorte que les modèles que nous élaborons fournissent lorsque cela est pertinent, a minima un niveau de confiance avec chaque résultat produit
+1.00 [5.4.d] Nous maîtrisons et mettons en oeuvre des approches réfléchies pour l'explicabilité et l'interprétabilité des modèles
+
+## Q5.5 - Transparence vis-à-vis des parties prenantes interagissant avec un modèle d'IA
+-nc- [5.5.a] Notre organisation n'utilise pas de modèles d'IA pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA
+0.00 [5.5.b] Les utilisateurs ne sont pas informés qu'ils interagissent avec un modèle d'IA
+0.50 [5.5.c] Une notice d'information est mise à disposition dans les conditions générales d'utilisation du système ou un document équivalent, en libre accès
+0.50 [5.5.d] Le système ou le service est explicite vis-à-vis de l'utilisateur quant au fait qu'un modèle d'IA est utilisé
+1.00 [5.5.e] Le système ou le service propose à l'utilisateur des informations supplémentaires sur les résultats qu'il aurait fournis dans des cas de figure légèrement différents (par exemple des "explications contrefactuelles" comme le plus petit changement dans les données d'entrée qui aurait permis d'arriver à une sortie donnée)
+1.00 [5.5.f] Nous sommes pionniers dans l'utilisation de registres publics pour les modèles d'IA, qui nous permettent de fournir de la transparence à nos parties prenantes et également de capter des retours utilisateurs
+
+## Q5.6 - Historisation des prédictions des modèles d'IA
+-nc- [5.6.a] Notre organisation n'utilise pas de modèles d'IA pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA
+0.00 [5.6.b] Nous n'avons pas encore mis en place l'historisation systématique des prédictions issues des modèles utilisés en production
+1.00 [5.6.c] Nous historisons systématiquement toutes les prédictions issues des modèles utilisés en production (associées aux données d'entrée et aux références des modèles concernés)
+
+## Q5.7 - Maîtrise du Shadow AI (usage d'outils d'IA non validés par l'organisation)
+0.00 [5.7.a] Nous n'avons pas encore identifié ni évalué ce risque
+0.50 [5.7.b] Nous avons mené une cartographie ou une enquête interne pour identifier les outils d'IA générative utilisés de manière informelle par nos collaborateurs
+0.50 [5.7.c] Nous disposons d'une charte ou politique formalisée encadrant l'utilisation d'outils d'IA générative externes (outils autorisés, données interdites d'usage, cas d'usage proscrits)
+0.75 [5.7.d] Nous sensibilisons et formons régulièrement les collaborateurs aux risques du Shadow AI (fuite de données confidentielles ou personnelles, propriété intellectuelle, fiabilité des réponses, biais)
+0.75 [5.7.e] Nous mettons à disposition des collaborateurs des alternatives validées et sécurisées (e.g. instance d'entreprise, API sous contrat avec garanties de confidentialité et de non-réutilisation des données) pour limiter le recours à des outils non maîtrisés
+
+
+# section 6 - Anticiper, suivre et minimiser les externalités négatives de l'activité data science
+
+## Q6.1 - Impact environnemental (consommation d'énergie et empreinte carbone)
+0.00 [6.1.a] À ce stade nous ne nous sommes pas penchés sur l'impact environnemental de notre activité data science ou de nos modèles d'IA
+0.25 [6.1.b] Nous avons élaboré des indicateurs définissant ce que nous souhaitons mesurer au sujet de la consommation d'énergie et de l'empreinte carbone de notre activité data science ou de nos modèles
+0.25 [6.1.c] Nous mesurons nos indicateurs régulièrement
+0.50 [6.1.d] Nous incluons leurs mesures dans les cartes d'identité des modèles
+0.25 [6.1.e] La mesure de ces indicateurs est un processus formalisé dans le cadre duquel nous fixons et pilotons des objectifs d'amélioration
+0.25 [6.1.f] Nous consolidons une vue agrégée de la consommation d'énergie et de l'empreinte carbone de notre activité data science
+0.25 [6.1.g] Cette vue agrégée est prise en compte dans l'évaluation de l'impact environnemental global de notre organisation (e.g. bilan carbone, bilan GES réglementaire, score de compatibilité avec l'Accord de Paris...)
+0.25 [6.1.h] La consommation d'énergie et l'empreinte carbone de notre activité data science ou de nos modèles sont transparentes pour nos parties prenantes et pour le grand public
+
+## Q6.2 - Impact social
+0.00 [6.2.a] À ce stade nous ne nous penchons pas sur l'impact social de notre activité data science ou de nos modèles d'IA
+0.25 [6.2.b] Dans certains cas nous nous interrogeons sur l'impact social
+0.50 [6.2.c] Nous menons ce travail de réflexion sur l'impact social à chaque projet
+1.25 [6.2.d] Nous menons ce travail de réflexion sur l'impact social à chaque projet et l'impact social est documenté dans le cycle de vie de chaque modèle
+2.00 [6.2.e] Nous menons ce travail de réflexion sur l'impact social à chaque projet, l'impact social est documenté dans le cycle de vie de chaque modèle, et nous entamons systématiquement un dialogue avec les parties prenantes concernées amont et aval
+
+## Q6.3 - Éthique et non-malfaisance
+0.00 [6.3.a] À ce stade nous ne nous sommes pas encore penchés sur la dimension éthique
+0.50 [6.3.b] Nous avons démarré des travaux sur la dimension éthique, qui n'ont pas encore abouti sur des livrables (e.g. une politique, des formations, etc.)
+1.00 [6.3.c] Les collaborateurs concernés par les activités data science reçoivent une formation à l'éthique
+1.00 [6.3.d] Notre organisation s'est dotée d'une politique en matière d'éthique
+1.00 [6.3.e] Sur les projets le justifiant, nous mettons en place un comité d'éthique indépendant ou nous sollicitons l'évaluation d'un organisme validant l'éthique des projets
+
+## Q6.4 - Répartition de la création de valeur
+-nc- [6.4.a] Notre organisation exerce ses activités de data science de manière autonome, y compris l'élaboration de jeux de données et l'exploitation pour son propre compte des modèles
+0.00 [6.4.b] À ce stade nous n'avons pas structuré cet aspect des projets de data science multi-partenaires
+1.00 [6.4.c] Dans ces cas de figure nous contractualisons le volet économique de la relation avec les parties prenantes impliquées en amont du projet
+1.00 [6.4.d] Notre organisation s'est dotée d'une politique encadrant de manière responsable le partage de valeur avec les parties prenantes impliquées
+
+
