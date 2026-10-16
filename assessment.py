@@ -3,12 +3,35 @@
 Parses the DSRC assessment `.md` file and generates:
 1) a structured `.json` file, meant to be directly uploaded in the web platform
 2) a neat template for easily adding score points per answer item
+
+Contrairement à "assessment.py", ce script calcul la note final en ne comptabilisant pas 
+les questions "non concerné". (L'autre methode de calcul attribuait d'office 50% de la note maximale)
+
 """
 
 import sys
 import os
 import re
 import json
+
+# ---------------------------------------------------------------------------
+# POLITIQUE "NON CONCERNE"
+# ---------------------------------------------------------------------------
+# Determine la valeur ecrite dans le bloc "non_concerned_recap" du fichier
+# assessment json, pour chaque element ayant une reponse "non concerne".
+#
+#   "half"    : la moitie du maximum de l'element (comportement historique,
+#               compatible avec la plateforme telle qu'elle tourne aujourd'hui).
+#               L'organisation non concernee recoit la moitie des points.
+#
+#   "exclude" : zero. L'organisation ne recoit aucun point et la question est
+#               retiree de son maximum. C'EST LA POLITIQUE CIBLE, mais elle
+#               suppose que la plateforme ait ete adaptee au prealable.
+#               NE PAS ACTIVER SANS VALIDATION DU DEVELOPPEUR PLATEFORME.
+#
+NON_CONCERNED_POLICY = "half"
+# ---------------------------------------------------------------------------
+
 from datetime import datetime
 from pathlib import Path
 
@@ -303,9 +326,13 @@ class Assessment:
                     for k, v in items_dict.items():
                         # Fetch score value of previous version to facilitate completion
                         pre_fill = '....'
-                        if upgrade_table["diff_per_version"][self.prev_scores_assessment_version]["answer_items"][k] \
-                                == 1:
+                        upgrade_value = upgrade_table["diff_per_version"][
+                            self.prev_scores_assessment_version]["answer_items"][k]
+                        if upgrade_value == 1:
                             pre_fill = prev_scores[k]
+                        elif upgrade_value != "no_fetch" and upgrade_value in prev_scores:
+                            # upgrade_value designates a different corresponding item to fetch
+                            pre_fill = prev_scores[upgrade_value]
                         if v["is_concerned_switch"] == 1:
                             pre_fill = '-nc-'
                         txt_lines.append(f'{pre_fill} [{k}] {v["answer_text_fr"]}\n')
@@ -418,6 +445,12 @@ class Assessment:
         with open(self.assessment_json_version_filepath, 'w', encoding="utf-8") as fp:
             json.dump(self.dict, fp, ensure_ascii=False, indent=4, separators=(',', ': '), sort_keys=False)
 
+
+
+# NOUVEAU CODE DE 202609 ---
+# On veut changer la maniere de calculer la note finale,
+# pour ne pas compter les questions "non concerné"
+
     def enrich_assessment_with_non_concerned_recap(self):
 
         temp_non_concerned = {}
@@ -437,20 +470,29 @@ class Assessment:
                 element_has_nc = False
                 element_is_conditional = True if elements_dict[element_idx]["condition"] != "n/a" else False
 
-                # Loop over answer items
+                # Loop over answer items to detect "NC" switches
                 items_dict = elements_dict[element_idx]["answer_items"]
                 for k, v in items_dict.items():
                     if v["is_concerned_switch"] == 1:
                         element_has_nc = True
 
-                if element_has_nc:
-                    temp_non_concerned[f"{i}.{j}"] = round(elements_dict[element_idx]["element_max_score"] / 2.0, 3)
-                if element_is_conditional:
-                    temp_conditional[f"{i}.{j}"] = round(elements_dict[element_idx]["element_max_score"] / 2.0, 3)
+                # Valeur transmise a la plateforme, selon NON_CONCERNED_POLICY
+                max_score = elements_dict[element_idx]["element_max_score"]
+                if NON_CONCERNED_POLICY == "exclude":
+                    nc_value = 0.0
+                else:
+                    nc_value = max_score / 2.0
 
-        self.dict["non_concerned_recap"] = {"non_concerned_in_element": temp_non_concerned,
-                                            "conditional_elements": temp_conditional,
-                                            }
+                if element_has_nc:
+                    temp_non_concerned[f"{i}.{j}"] = round(nc_value, 3)
+                if element_is_conditional:
+                    temp_conditional[f"{i}.{j}"] = round(nc_value, 3)
+
+        # Noms de clés conservés à l'identique de la version 202301, attendus par la plateforme
+        self.dict["non_concerned_recap"] = {
+            "non_concerned_in_element": temp_non_concerned,
+            "conditional_elements": temp_conditional,
+        }
 
         with open(self.assessment_json_version_filepath, 'w', encoding="utf-8") as fp:
             json.dump(self.dict, fp, ensure_ascii=False, indent=4, separators=(',', ': '), sort_keys=False)

@@ -11,7 +11,7 @@ This library provides several scripts enabling to:
   - the total max score configured per section
   - the evaluation elements conditional to others
   - the evaluation elements having a dedicated non-concerned answer item
-  
+
 ## Instructions
 
 ### Standard use - Complete processing
@@ -32,10 +32,11 @@ This library provides several scripts enabling to:
    ASSESSMENT_MD_VERSION_FILENAME_FR = 'assessment-0.61-fr.md'
    ASSESSMENT_MD_VERSION_FILENAME_EN = 'assessment-0.61-en.md'
    ASSESSMENT_VERSION = '0.61'
+   ASSESSMENT_PREVIOUS_VERSION = '0.6'  # previous version of the assessment
    ASSESSMENT_NAME_FR = 'Evaluation Data Science Responsable et de Confiance'
    ASSESSMENT_NAME_EN = 'Responsible and Trustworthy Data Science Assessment'
-   OLD_VERSION_TO_CHECK = '0.6'  # previous version of the assessment
-   OLD_SCORING_FILENAME = 'assessment-0.6_scoring-1.json'  # scoring reference of the previous version 
+   ASSESSMENT_VERSION_TO_PREFILL_SCORING_TEMPLATE = '0.6'  # version used to pre-fill the scoring template
+   OLD_SCORING_FILENAME = 'assessment-0.6_scoring-1.json'  # scoring reference of that version
    ```
 
    Then execute the corresponding cell of `main.py`.
@@ -45,9 +46,11 @@ This library provides several scripts enabling to:
    - the `.json` version of the assessment in folder `/processed_files`
    - the `.txt` scoring template in folder `/intermediary_files`
 
-1. Fill-in the scoring template. If you configured previous versions correctly your template should be pre-filled, and only answer items which are new in the assessment are prefixed with `....` so that you can identify them quickly.
+1. Fill-in the scoring template. If you configured previous versions correctly your template should be pre-filled, and only answer items which cannot be fetched from the previous version are prefixed with `....` so that you can identify them quickly. See "Values for upgrade_status" below to control what gets fetched.
 
    > Note: **Make sure you save your file**.
+
+   > Warning: re-running the first cell overwrites the scoring template. Back it up before re-running, or instantiate the `Assessment` object on its own (see "Processing only a new scoring template").
 
 1. Execute the second cell of `main.py`. It will:
 
@@ -100,6 +103,13 @@ Below are listed the different values possible for certain syntax elements, and 
 - "no_fetch": when not to be kept
 - "2.3": indicating a different corresponding element or item to fetch
 
+The third form is what you need whenever answer items are shifted, for instance when a
+"not concerned" item is inserted at the top of an element, or when an element is moved to
+another section. Mapping `"1.7.b": "1.7.a"` tells the scripts that the new item `1.7.b`
+corresponds to the former `1.7.a`: its score value is pre-filled in the scoring template,
+and organisations keep their previous answer. Using `"no_fetch"` instead would force them
+to answer the element again from scratch.
+
 #### Values for "pastilles"
 
 - Inchangé / Unchanged
@@ -109,3 +119,33 @@ Below are listed the different values possible for certain syntax elements, and 
 #### Values for "editos"
 
 - Write change editos as sentences ending with a period "."
+
+### Non-concerned policy
+
+The constant `NON_CONCERNED_POLICY`, at the top of `assessment.py`, determines the value
+written in the `non_concerned_recap` block of the assessment json, for each element having
+a dedicated "not concerned" answer item.
+
+- `"half"`: half of the element max score. This is the historical behaviour and the
+  default. The platform grants that amount to a non-concerned organisation and removes it
+  from the score it can reach.
+- `"exclude"`: zero. The organisation is granted no points and the element is removed from
+  its maximum.
+
+**`"exclude"` requires the platform scoring logic to be adapted first.** As it currently
+stands, the platform uses this single value both to grant points and to reduce the reachable
+maximum. Setting it to zero without changing the platform would penalise non-concerned
+organisations rather than leaving them unaffected. Keep `"half"` until the platform side
+has been updated accordingly.
+
+### Files to upload to the platform
+
+Three files, all carrying the same version number in their name:
+
+- `processed_files/assessment-<version>.json`
+- `processed_files/assessment-<version>_scoring-<n>.json`
+- `input_files/assessment-<version>_upgrade_table.json`
+
+Before uploading, check in the assessment json that `non_concerned_recap` holds the keys
+`non_concerned_in_element` and `conditional_elements`. These names are the ones the platform
+expects; renaming them silently breaks the score computation.
